@@ -20,25 +20,37 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var flipCountLabel: UILabel!
     
+    @IBOutlet var cardButton: [UIButton]!
+    
+    var emojiChoice  = ["👑","🧛","👑","🧛"]
     
     
     @IBAction func touchCard(_ sender: UIButton) {
         
     flipCount += 1
         
+        if   let cardNumber = cardButton.firstIndex(of: sender){
+//        print("Card number is : \(cardNumber ?? 1010)")
+            flipCard(withEmoji: emojiChoice[cardNumber], on: sender)
+        }
+        else{
+            
+        }
+            
+            
 //    print("You clicked me")
-        flipCard(withEmoji: "🧛", on: sender)
+//        flipCard(withEmoji: "🧛", on: sender)
     }
     
-    @IBAction func touchCard2(_ sender: UIButton) {
-        
-        flipCount += 1
-        
-//        flipCountLabel.text = "Flip Counts : \(flipCount)"
-        
-        flipCard(withEmoji: "👑", on: sender)
-    }
-    
+//    @IBAction func touchCard2(_ sender: UIButton) {
+//
+//        flipCount += 1
+//
+////        flipCountLabel.text = "Flip Counts : \(flipCount)"
+//
+//        flipCard(withEmoji: "👑", on: sender)
+//    }
+//
     
     //function flipCard
     func flipCard(withEmoji emoji :String, on button:UIButton){
