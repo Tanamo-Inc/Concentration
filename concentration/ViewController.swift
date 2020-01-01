@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+  lazy var game = Concentration(numberOfPairOfCards: (cardButton.count + 1) /  2)
+    
+    
     //No need to declare variable type in swift.
     var flipCount = 0 {
         
@@ -22,16 +26,16 @@ class ViewController: UIViewController {
     
     @IBOutlet var cardButton: [UIButton]!
     
-    var emojiChoice  = ["👑","🧛","👑","🧛"]
-    
-    
     @IBAction func touchCard(_ sender: UIButton) {
         
     flipCount += 1
         
         if   let cardNumber = cardButton.firstIndex(of: sender){
 //        print("Card number is : \(cardNumber ?? 1010)")
-            flipCard(withEmoji: emojiChoice[cardNumber], on: sender)
+//            flipCard(withEmoji: emojiChoice[cardNumber],on: sender)
+            game.chooseCard(at: cardNumber)
+            updateViewFromModel()
+            
         }
         else{
             
@@ -52,30 +56,59 @@ class ViewController: UIViewController {
 //    }
 //
     
-    //function flipCard
-    func flipCard(withEmoji emoji :String, on button:UIButton){
+    
+    func updateViewFromModel(){
         
-        
-//        print("PrintCard with Emoji : \(emoji))")
-        
-        if button.currentTitle == emoji {
-          
+        for index in cardButton.indices{
+            
+        let button = cardButton[index]
+            let card = game.cards[index]
+            
+            if card.isFaceUp {
+                button.setTitle(emoji(for: card), for:UIControl.State.normal)
+                
+                button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            }
+                
+            else {
             button.setTitle("", for: UIControl.State.normal)
-            
-            button.backgroundColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
-        }
-        else{
-            button.setTitle(emoji, for:UIControl.State.normal)
-            
-            button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                   
+                button.backgroundColor =  card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) : #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
+                
+                
+            } 
         }
         
+    }
+    
+    var emojiChoice  = ["👑","🧛","🎅","🎲","🚒","💊","🦋"]
+    
+//    var emoji = Dictionary<Int,String>()
+    
+    var emoji = [Int:String]()
+    
+    
+    func emoji(for card:Card) -> String{
         
+
+        if emoji[card.identifier]  == nil,emojiChoice.count > 0{
+            let randomIndex = Int(arc4random_uniform(UInt32(emojiChoice.count)))
+            
+            emoji[card.identifier] = emojiChoice.remove(at:randomIndex)
+            
+        }
         
+        return  emoji[card.identifier] ?? "?"
+        
+//        let choseCard = emoji[card.identifier]
+       
     }
     
     
     
+    
+
+
     
 }
 
