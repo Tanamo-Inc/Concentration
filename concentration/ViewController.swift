@@ -81,7 +81,7 @@ class ViewController: UIViewController {
         
     }
     
-    var emojiChoice  = ["👑","🧛","🎅","🎲","🚒","💊","🦋"]
+    var emojiChoice  = ["👑","🧛","🎅","🎲","🚒","💊","🦋","🍎", "🍊", "🍑", "🌺"]
     
 //    var emoji = Dictionary<Int,String>()
     
@@ -99,6 +99,15 @@ class ViewController: UIViewController {
         }
         
         return  emoji[card.identifier] ?? "?"
+        
+        
+//        if let chosenEmoji = emoji[card.identifier] {
+//            return chosenEmoji
+//        } else {
+//            return "?"
+//        }
+        
+        
         
 //        let choseCard = emoji[card.identifier]
        

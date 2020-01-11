@@ -23,7 +23,10 @@ struct Card{
     
     
     init(){
-        self.identifier = 0
+//        self.identifier = 0
+        
+        // Self means this struct's identifier (so the global var inside the struct)
+        self.identifier = Card.getUniqueIdentifier()
     }
     
     
