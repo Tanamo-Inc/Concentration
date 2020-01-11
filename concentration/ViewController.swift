@@ -10,11 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
+    // Cannot use property observer with lazy var.
   lazy var game = Concentration(numberOfPairOfCards: (cardButton.count + 1) /  2)
     
     
-    //No need to declare variable type in swift.
+    // No need to declare variable type in swift.
     var flipCount = 0 {
         
     didSet {
@@ -27,11 +27,13 @@ class ViewController: UIViewController {
     @IBOutlet var cardButton: [UIButton]!
     
     
-//    Ignored external name using underbar
+    //  Ignored external name using underbar
     @IBAction func touchCard(_ sender: UIButton) {
         
     flipCount += 1
         
+        
+        // use let for constant.
         if   let cardNumber = cardButton.firstIndex(of: sender){
 //        print("Card number is : \(cardNumber ?? 1010)")
 //            flipCard(withEmoji: emojiChoice[cardNumber],on: sender)
