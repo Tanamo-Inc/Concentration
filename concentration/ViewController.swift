@@ -26,6 +26,8 @@ class ViewController: UIViewController {
     
     @IBOutlet var cardButton: [UIButton]!
     
+    
+//    Ignored external name using underbar
     @IBAction func touchCard(_ sender: UIButton) {
         
     flipCount += 1
