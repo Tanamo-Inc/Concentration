@@ -175,12 +175,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Shi-aq-NI1" secondAttribute="bottom" id="4Uv-R4-jt1"/>
                             <constraint firstItem="cdH-kA-Nl7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="U8D-uC-u50"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cdH-kA-Nl7" secondAttribute="trailing" constant="16" id="c8Q-fS-Pnx"/>
                             <constraint firstItem="cdH-kA-Nl7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hdu-R5-xH9"/>
+                            <constraint firstItem="Shi-aq-NI1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cdH-kA-Nl7" secondAttribute="bottom" constant="8" symbolic="YES" id="nbe-Jg-sly"/>
                             <constraint firstItem="8pD-ur-CSK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ndl-iI-Cej"/>
                             <constraint firstItem="8pD-ur-CSK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="tGa-gJ-a1D"/>
                             <constraint firstItem="cdH-kA-Nl7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wKK-Xs-Mm6"/>
