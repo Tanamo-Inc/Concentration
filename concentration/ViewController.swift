@@ -11,9 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // Cannot use property observer with lazy var.
-  lazy var game = Concentration(numberOfPairOfCards: numberOfPairOfCards)
-    
-    
+ private lazy var game = Concentration(numberOfPairOfCards: numberOfPairOfCards)
     
     
     // using computed property
@@ -28,23 +26,22 @@ class ViewController: UIViewController {
         
     }
     
-    
-    
+
     // No need to declare variable type in swift.
-    var flipCount = 0 {
+   private(set) var flipCount = 0 {
         
     didSet {
        flipCountLabel.text = "Flip Counts : \(flipCount)"
         }
     }
 
-    @IBOutlet weak var flipCountLabel: UILabel!
+    @IBOutlet private weak var flipCountLabel: UILabel!
     
-    @IBOutlet var cardButton: [UIButton]!
+    @IBOutlet private var cardButton: [UIButton]!
     
     
     //  Ignored external name using underbar
-    @IBAction func touchCard(_ sender: UIButton) {
+    @IBAction private func touchCard(_ sender: UIButton) {
         
     flipCount += 1
         
@@ -77,7 +74,7 @@ class ViewController: UIViewController {
 //
     
     
-    func updateViewFromModel(){
+ private func updateViewFromModel(){
         
         for index in cardButton.indices{
             
@@ -101,14 +98,14 @@ class ViewController: UIViewController {
         
     }
     
-    var emojiChoice  = ["👑","🧛","🎅","🎲","🚒","💊","🦋","🍎", "🍊", "🍑", "🌺"]
+   private var emojiChoice  = ["👑","🧛","🎅","🎲","🚒","💊","🦋","🍎", "🍊", "🍑", "🌺"]
     
 //    var emoji = Dictionary<Int,String>()
     
-    var emoji = [Int:String]()
+  private  var emoji = [Int:String]()
     
     
-    func emoji(for card:Card) -> String{
+  private  func emoji(for card:Card) -> String{
         
 
         if emoji[card.identifier]  == nil,emojiChoice.count > 0{
