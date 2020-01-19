@@ -46,6 +46,9 @@ class Concentration{
     
     func chooseCard(at index: Int){
     
+        assert(cards.indices.contains(index),"Concentration.choosecard(at : \(index)) : index not found")
+        
+        
 //        if cards[index].isFaceUp{
 //            cards[index].isFaceUp = false
 //            }
@@ -93,6 +96,7 @@ class Concentration{
     
     init(numberOfPairOfCards:Int){
 
+        assert(numberOfPairOfCards > 0,"Concentration.init(at : \(numberOfPairOfCards )) : you must have at least one pair of cards")
         
         for  _ in 1...numberOfPairOfCards {
     
