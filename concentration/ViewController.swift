@@ -11,7 +11,23 @@ import UIKit
 class ViewController: UIViewController {
     
     // Cannot use property observer with lazy var.
-  lazy var game = Concentration(numberOfPairOfCards: (cardButton.count + 1) /  2)
+  lazy var game = Concentration(numberOfPairOfCards: numberOfPairOfCards)
+    
+    
+    
+    
+    // using computed property
+    var numberOfPairOfCards :Int {
+        
+           return  (cardButton.count + 1) /  2
+        
+//        // use get for read only.
+//        get{
+//            return  (cardButton.count + 1) /  2
+//        }
+        
+    }
+    
     
     
     // No need to declare variable type in swift.
