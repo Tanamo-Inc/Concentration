@@ -60,6 +60,7 @@ class Concentration{
     
     
     init(numberOfPairOfCards:Int){
+
         
         for  _ in 1...numberOfPairOfCards {
     
