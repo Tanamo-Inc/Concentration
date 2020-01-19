@@ -8,7 +8,10 @@
 
 import Foundation
 
-class Concentration{
+
+//change from class to struct. Struct are value type and they are not stored in heap.
+
+struct Concentration{
     
   private(set)  var cards = [Card]()
     
@@ -44,7 +47,7 @@ class Concentration{
     }
     
     
-    func chooseCard(at index: Int){
+    mutating func chooseCard(at index: Int){
     
         assert(cards.indices.contains(index),"Concentration.choosecard(at : \(index)) : index not found")
         
