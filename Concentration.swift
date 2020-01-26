@@ -20,21 +20,26 @@ struct Concentration{
   private  var indexOfOneAndOnlyFacedCard: Int?{
         
         get{
-            var foundIndex : Int?
             
-            for index in cards.indices{
-                if(cards[index].isFaceUp){
-                    
-                    if(foundIndex == nil){
-                        foundIndex = index
-                    }
-                    else{
-                        
-                        return nil
-                    }
-                }
-            }
-            return foundIndex
+            let faceUpCardIndices = cards.indices.filter{ cards[$0].isFaceUp}
+            
+            return faceUpCardIndices.count == 1 ? faceUpCardIndices.first : nil
+            
+//            var foundIndex : Int?
+//
+//            for index in cards.indices{
+//                if(cards[index].isFaceUp){
+//
+//                    if(foundIndex == nil){
+//                        foundIndex = index
+//                    }
+//                    else{
+//
+//                        return nil
+//                    }
+//                }
+//            }
+//            return foundIndex
         }
     
         set{
@@ -62,28 +67,17 @@ struct Concentration{
         if !cards[index].isMatched{
             
             if let matchIndex = indexOfOneAndOnlyFacedCard , matchIndex != index{
-                // Check if Cards match
-                
                 if cards[matchIndex].identifier == cards[index].identifier {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched=true
-                    
                 }
                 
                 cards[index].isFaceUp = true
             
                 
-            }
+            } 
             else{
                 //  Either no cards or two cards are face up
-//
-//                for flipDownIndice in cards.indices{
-//
-//                    cards[flipDownIndice].isFaceUp = false
-//                }
-//
-//                cards[index].isFaceUp = true
-        
         
                indexOfOneAndOnlyFacedCard = index
                 
@@ -110,6 +104,10 @@ struct Concentration{
         //TODO : Shuffle the Cards
         
     }
+    
+    
+    
+    
     
     
     
