@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConcentrationViewController: UIViewController {
     
     // Cannot use property observer with lazy var.
  private lazy var game = Concentration(numberOfPairOfCards: numberOfPairOfCards)
@@ -31,11 +31,41 @@ class ViewController: UIViewController {
    private(set) var flipCount = 0 {
         
     didSet {
-       flipCountLabel.text = "Flip Counts : \(flipCount)"
+        
+//       flipCountLabel.text = "Flip Counts : \(flipCount)"
+        
+          updateFlipCountLabel()
+        
         }
     }
+    
+    
+    
+    private func updateFlipCountLabel(){
+    
+        let attributes : [NSAttributedString.Key:Any] =
+            [
+                .strokeWidth: 5.0,
+                .strokeColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        ]
+    
+        let attributesString = NSAttributedString(string: "Flip Counts : \(flipCount)",attributes:attributes)
+        
+       flipCountLabel.attributedText = attributesString
+    
+    }
 
-    @IBOutlet private weak var flipCountLabel: UILabel!
+    
+    
+    @IBOutlet private weak var flipCountLabel: UILabel!{
+        
+        didSet{
+            updateFlipCountLabel()
+        }
+    }
+    
+    
+
     
     @IBOutlet private var cardButton: [UIButton]!
     
@@ -84,19 +114,36 @@ class ViewController: UIViewController {
             if card.isFaceUp {
                 button.setTitle(emoji(for: card), for:UIControl.State.normal)
                 
-                button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                button.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
             }
                 
             else {
             button.setTitle("", for: UIControl.State.normal)
                    
-                button.backgroundColor =  card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) : #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
+                button.backgroundColor =  card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) : #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
                 
                 
             } 
         }
         
     }
+    
+    
+    
+    
+//    var theme : String? {
+//
+//    didSet{
+//
+//    emojiChoice = theme ??  ""
+//    emoji = [:]
+//
+//    updateViewFromModel()
+//
+//    }
+//
+//}
+    
     
    private var emojiChoice  = ["👑","🧛","🎅","🎲","🚒","💊","🦋","🍎", "🍊", "🍑", "🌺"]
     
