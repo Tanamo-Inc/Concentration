@@ -149,40 +149,24 @@ class ConcentrationViewController: UIViewController {
     
 //    var emoji = Dictionary<Int,String>()
     
-  private  var emoji = [Int:String]()
+  private  var emoji = [Card:String]()
     
     
   private  func emoji(for card:Card) -> String{
         
 
-        if emoji[card.identifier]  == nil,emojiChoice.count > 0{
+        if emoji[card]  == nil,emojiChoice.count > 0{
             
-            
-//            let randomIndex = Int(arc4random_uniform(UInt32(emojiChoice.count)))
-//
-//            emoji[card.identifier] = emojiChoice.remove(at:randomIndex)
-            
-            
+    
             //using extension arc4random
             
-            emoji[card.identifier] = emojiChoice.remove(at:emojiChoice.count.arc4random)
+            emoji[card] = emojiChoice.remove(at:emojiChoice.count.arc4random)
 
             
         }
         
-        return  emoji[card.identifier] ?? "?"
+        return  emoji[card] ?? "?"
         
-        
-//        if let chosenEmoji = emoji[card.identifier] {
-//            return chosenEmoji
-//        } else {
-//            return "?"
-//        }
-        
-        
-        
-//        let choseCard = emoji[card.identifier]
-       
     }
 
 }
