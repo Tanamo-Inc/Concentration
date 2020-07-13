@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="poj-Uq-3Iv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n3W-ml-7i4">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -17,37 +17,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dcy-Kq-N7X">
-                                <rect key="frame" x="119" y="313" width="137" height="196"/>
+                                <rect key="frame" x="119" y="335" width="137" height="196"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUQ-nD-lVD">
                                         <rect key="frame" x="0.0" y="0.0" width="137" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Animals"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="Choose Theme" id="fXE-Ff-qPy"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CmX-c6-bde">
                                         <rect key="frame" x="18" y="68" width="101" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Faces"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="Choose Theme" id="ABO-zr-kqO"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVb-ip-VOD">
                                         <rect key="frame" x="12" y="136" width="113" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Sports"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="Choose Theme" id="z3I-NI-4DB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Dcy-Kq-N7X" firstAttribute="centerY" secondItem="Aub-iO-pDM" secondAttribute="centerY" id="CfS-dr-5dt"/>
-                            <constraint firstItem="Dcy-Kq-N7X" firstAttribute="centerX" secondItem="Aub-iO-pDM" secondAttribute="centerX" id="Dho-Et-oYM"/>
+                            <constraint firstItem="Dcy-Kq-N7X" firstAttribute="centerY" secondItem="Aub-iO-pDM" secondAttribute="centerY" id="HDU-w7-Y4H"/>
+                            <constraint firstItem="Dcy-Kq-N7X" firstAttribute="centerX" secondItem="Aub-iO-pDM" secondAttribute="centerX" id="cUI-NA-3Lv"/>
+                            <constraint firstItem="cUQ-nD-lVD" firstAttribute="centerX" secondItem="Aub-iO-pDM" secondAttribute="centerX" id="rF6-yf-aRZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Aub-iO-pDM"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cwo-u6-hNP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqk-CV-n0Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-727" y="18"/>
+            <point key="canvasLocation" x="215.19999999999999" y="17.733990147783253"/>
         </scene>
         <!--Concentration View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -58,7 +69,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cdH-kA-Nl7">
-                                <rect key="frame" x="16" y="44" width="343" height="232"/>
+                                <rect key="frame" x="16" y="88" width="343" height="232"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-c8-fPE">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="72"/>
@@ -230,6 +241,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="I1x-F2-fqh"/>
                     <connections>
                         <outlet property="flipCountLabel" destination="Shi-aq-NI1" id="wW0-G3-tro"/>
                         <outletCollection property="cardButton" destination="PIr-oC-J3R" collectionClass="NSMutableArray" id="sve-1b-rdI"/>
@@ -248,7 +260,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="49" y="20"/>
+            <point key="canvasLocation" x="991.20000000000005" y="19.95073891625616"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m7K-45-UNb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n3W-ml-7i4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5TK-4L-36q">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="poj-Uq-3Iv" kind="relationship" relationship="rootViewController" id="jlW-HM-yFX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LvY-OL-lJT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-727.20000000000005" y="17.733990147783253"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ABO-zr-kqO"/>
+    </inferredMetricsTieBreakers>
 </document>
