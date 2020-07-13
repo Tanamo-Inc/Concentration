@@ -20,6 +20,15 @@ class ThemeChooserViewController: UIViewController {
     ]
     
     
+    @IBAction func changeTheme(_ sender: Any) {
+        
+          performSegue(withIdentifier: "Choose Theme", sender: sender)
+    }
+    
+    
+    
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
