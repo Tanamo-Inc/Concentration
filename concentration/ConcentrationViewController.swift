@@ -107,6 +107,8 @@ class ConcentrationViewController: UIViewController {
     
  private func updateViewFromModel(){
         
+    if cardButton != nil {
+    
         for index in cardButton.indices{
             
         let button = cardButton[index]
@@ -126,6 +128,7 @@ class ConcentrationViewController: UIViewController {
                 
             } 
         }
+    }
         
     }
     

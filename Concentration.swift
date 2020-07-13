@@ -78,7 +78,21 @@ struct Concentration{
         cards += [card,card]
            
         }
+        
         //TODO : Shuffle the Cards
+//        for _ in 0...cards.count {
+//              if cards.count >= 2 {
+//                  var swapFromIndex = 0
+//                  var swapToIndex = 0
+//
+//                  repeat {
+//                      swapFromIndex = Int(arc4random_uniform(UInt32(cards.count)))
+//                      swapToIndex = Int(arc4random_uniform(UInt32(cards.count)))
+//                  } while(swapFromIndex == swapToIndex)
+//                  cards.swapAt(swapFromIndex, swapToIndex)
+//              }
+//          }
+        
         
     }
     
