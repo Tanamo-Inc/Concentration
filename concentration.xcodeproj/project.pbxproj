@@ -15,6 +15,7 @@
 		04CE74D323B76F27006F064D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CE74D123B76F27006F064D /* LaunchScreen.storyboard */; };
 		04EF8DCF23BA94A4002169D1 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF8DCE23BA94A4002169D1 /* Concentration.swift */; };
 		04EF8DD123BA9667002169D1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF8DD023BA9667002169D1 /* Card.swift */; };
+		04F49AEE24BC90CC00AFDC6B /* ThemeChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F49AED24BC90CC00AFDC6B /* ThemeChooserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		04CE74D423B76F27006F064D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04EF8DCE23BA94A4002169D1 /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = SOURCE_ROOT; };
 		04EF8DD023BA9667002169D1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		04F49AED24BC90CC00AFDC6B /* ThemeChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChooserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				04CE74DA23B774F4006F064D /* supporting files */,
 				04CE74CA23B76F1E006F064D /* ConcentrationViewController.swift */,
 				04CE74CC23B76F1E006F064D /* Main.storyboard */,
+				04F49AED24BC90CC00AFDC6B /* ThemeChooserViewController.swift */,
 				04CE74D423B76F27006F064D /* Info.plist */,
 			);
 			path = concentration;
@@ -154,6 +157,7 @@
 			files = (
 				04CE74CB23B76F1E006F064D /* ConcentrationViewController.swift in Sources */,
 				04EF8DCF23BA94A4002169D1 /* Concentration.swift in Sources */,
+				04F49AEE24BC90CC00AFDC6B /* ThemeChooserViewController.swift in Sources */,
 				04EF8DD123BA9667002169D1 /* Card.swift in Sources */,
 				04CE74C723B76F1E006F064D /* AppDelegate.swift in Sources */,
 				04CE74C923B76F1E006F064D /* SceneDelegate.swift in Sources */,

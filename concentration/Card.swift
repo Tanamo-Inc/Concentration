@@ -13,10 +13,13 @@ struct Card : Hashable
 
 {
     
-//    var hashValue :Int{return identifier}
     
+// Hashable inherits from Equatable, so when you declare Hashable //conformance, Equatable methods are synthetised for you.
+    
+    var hashValue :Int{return identifier}
+//
     static func == (lhs:Card,rhs:Card) ->Bool {
-        
+
         return lhs.identifier == rhs.identifier
     }
     

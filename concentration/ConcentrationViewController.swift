@@ -43,6 +43,7 @@ class ConcentrationViewController: UIViewController {
     
     private func updateFlipCountLabel(){
     
+        //Using NSAttributedString . NS  is a cue that it is old atyle Objective-C Class.
         let attributes : [NSAttributedString.Key:Any] =
             [
                 .strokeWidth: 5.0,
@@ -112,7 +113,7 @@ class ConcentrationViewController: UIViewController {
             let card = game.cards[index]
             
             if card.isFaceUp {
-                button.setTitle(emoji(for: card), for:UIControl.State.normal)
+                button.setTitle(myEmoji(for: card), for:UIControl.State.normal)
                 
                 button.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
             }
@@ -129,45 +130,49 @@ class ConcentrationViewController: UIViewController {
     }
     
     
+    var theme : String? {
+
+    didSet{
+
+    emojiChoice = theme ??  ""
+        
+    emoji = [:]
+
+    updateViewFromModel()
+
+    }
+
+}
     
+    //change from array to string below
+    //   private var emojiChoice  = ["👑","🧛","🎅","🎲","🚒","💊","🦋","🍎", "🍊", "🍑", "🌺"]
     
-//    var theme : String? {
-//
-//    didSet{
-//
-//    emojiChoice = theme ??  ""
-//    emoji = [:]
-//
-//    updateViewFromModel()
-//
-//    }
-//
-//}
+  private var emojiChoice  = "👑🧛🎅🎲🚒💊🦋🍎🍊🍑🌺"
     
-    
-   private var emojiChoice  = ["👑","🧛","🎅","🎲","🚒","💊","🦋","🍎", "🍊", "🍑", "🌺"]
     
 //    var emoji = Dictionary<Int,String>()
     
   private  var emoji = [Card:String]()
     
     
-  private  func emoji(for card:Card) -> String{
-        
+  private  func myEmoji(for card:Card) -> String{
+
 
         if emoji[card]  == nil,emojiChoice.count > 0{
-            
-    
-            //using extension arc4random
-            
-            emoji[card] = emojiChoice.remove(at:emojiChoice.count.arc4random)
 
-            
+
+            let randomString = emojiChoice.index(emojiChoice.startIndex, offsetBy: emojiChoice.count.arc4random)
+
+            emoji[card] =  String(emojiChoice.remove(at:randomString))
+
         }
-        
+
         return  emoji[card] ?? "?"
-        
+
     }
+    
+    
+    
 
 }
 
